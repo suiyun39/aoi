@@ -9,12 +9,6 @@ group = "io.suiyun"
 version = "0.0.1-SNAPSHOT"
 description = "aoi"
 
-java {
-  toolchain {
-    languageVersion = JavaLanguageVersion.of(21)
-  }
-}
-
 repositories {
   mavenCentral()
 }
@@ -29,10 +23,20 @@ dependencies {
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
+}
+
 kotlin {
   compilerOptions {
     freeCompilerArgs.addAll("-Xjsr305=strict")
   }
+}
+
+springBoot {
+  buildInfo() // 生成构建信息
 }
 
 tasks.withType<Test> {
