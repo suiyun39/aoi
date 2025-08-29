@@ -2,6 +2,10 @@ spring:
   application:
     name: aoi
 
+# 自定义 info 信息，对应 management.info.env
+info:
+  welcome: "開発者さん、お疲れさまです"
+
 management:
   endpoints:
     web:
@@ -12,3 +16,12 @@ management:
       show-components: always
       probes:
         enabled: true
+  info:
+    env:
+      enabled: true
+    build:
+      enabled: true
+    os:
+      enabled: true
+    java:
+      enabled: true
